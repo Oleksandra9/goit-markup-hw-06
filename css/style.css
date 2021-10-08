@@ -570,7 +570,6 @@ textarea {
   justify-content: center;
 
   font-family: Roboto;
-
   font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
@@ -583,7 +582,7 @@ textarea {
 }
 .btn-submit:hover,
 .btn-submit:focus {
-  background: #188ce8;
+  background-color: #188ce8;
 }
 
 .icon-submit {
@@ -608,6 +607,13 @@ textarea {
 .sign-up-footer-input:focus {
   border: 1px solid var(--accent-color);
   outline: none;
+}
+
+.sign-up-footer-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0.03em;
 }
 
 /* ---------------------PORTFOLIO(2-d page)------------------ */
