@@ -815,15 +815,25 @@ textarea {
   border-radius: 4px;
   transition: border var(--transition-duration) var(--animation-timing-function);
 }
-.modal-input:hover,
+
+/* -------------------------------------- */
+/* .modal-input:hover,
 .modal-input:focus {
   border: 1px solid var(--accent-color);
   cursor: pointer;
   outline: var(--accent-color);
 }
-
 .modal-input:hover + .modal-icon,
 .modal-input:focus + .modal-icon {
+  fill: var(--accent-color);
+} */
+/* -------------------------------------- */
+
+.modal-input:focus {
+  border: 1px solid var(--accent-color);
+  outline: none;
+}
+.modal-field:focus-within > .modal-icon {
   fill: var(--accent-color);
 }
 
@@ -872,4 +882,8 @@ textarea {
   font-size: 12px;
   line-height: 1.2;
   letter-spacing: 0.01em;
+}
+
+.checkbox {
+  appearance: none;
 }
