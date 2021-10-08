@@ -600,6 +600,14 @@ textarea {
   background: #2f303a;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+
+  transition: border var(--transition-duration) var(--animation-timing-function),
+    outline var(--transition-duration) var(--animation-timing-function);
+}
+
+.sign-up-footer-input:focus {
+  border: 1px solid var(--accent-color);
+  outline: none;
 }
 
 /* ---------------------PORTFOLIO(2-d page)------------------ */
@@ -721,7 +729,7 @@ textarea {
     var(--animation-timing-function);
 }
 
-/* -------------------------MODAL----------------------- */
+/* -------------------------MODAL--------------------------- */
 
 .backdrop {
   position: fixed;
@@ -771,11 +779,24 @@ textarea {
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--main-white-color);
   fill: currentColor;
+
+  transition: fill var(--transition-duration) var(--animation-timing-function);
+}
+
+.button-close:hover,
+.button-close:focus {
+  fill: var(--accent-color);
+}
+
+.modal-btn-submit {
+  align-self: center;
+  transition: background-color var(--transition-duration)
+    var(--animation-timing-function);
 }
 
 .modal-btn-submit:hover,
 .modal-btn-submit:focus {
-  background: #188ce8;
+  background-color: #188ce8;
 }
 
 .modal-form {
@@ -805,7 +826,6 @@ textarea {
   position: absolute;
   left: 12px;
   top: 29px;
-  fill: black;
   transition: fill var(--transition-duration) var(--animation-timing-function);
 }
 .modal-input {
@@ -816,24 +836,12 @@ textarea {
   transition: border var(--transition-duration) var(--animation-timing-function);
 }
 
-/* -------------------------------------- */
-/* .modal-input:hover,
-.modal-input:focus {
-  border: 1px solid var(--accent-color);
-  cursor: pointer;
-  outline: var(--accent-color);
-}
-.modal-input:hover + .modal-icon,
-.modal-input:focus + .modal-icon {
-  fill: var(--accent-color);
-} */
-/* -------------------------------------- */
-
 .modal-input:focus {
   border: 1px solid var(--accent-color);
   outline: none;
+  cursor: pointer;
 }
-.modal-field:focus-within > .modal-icon {
+.modal-field:focus-within .modal-icon {
   fill: var(--accent-color);
 }
 
@@ -846,10 +854,6 @@ textarea {
   letter-spacing: 0.01em;
 }
 
-.modal-btn-submit {
-  align-self: center;
-}
-
 .checkbox-field {
   display: flex;
   justify-content: center;
@@ -858,9 +862,12 @@ textarea {
 }
 
 .checkbox-label {
+  position: relative;
+
   font-size: 14px;
   line-height: 2;
-  margin-left: 8px;
+
+  margin-left: 20px;
 }
 
 .modal-textarea {
@@ -871,11 +878,11 @@ textarea {
   padding: 12px 16px;
   transition: border var(--transition-duration) var(--animation-timing-function);
 }
-.modal-textarea:hover,
+
 .modal-textarea:focus {
   border: 1px solid var(--accent-color);
   cursor: pointer;
-  outline: var(--accent-color);
+  outline: none;
 }
 .modal-textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
@@ -884,6 +891,26 @@ textarea {
   letter-spacing: 0.01em;
 }
 
-.checkbox {
+.checkbox-icon {
+  position: absolute;
+  left: -18px;
+  bottom: 8px;
+  margin: 0;
+  width: 16px;
+  height: 15px;
+  border: 2px solid black;
+  border-radius: 2px;
+  fill: var(--main-white-color);
+}
+.checkbox-input:checked + .checkbox-icon {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.checkbox-input {
   appearance: none;
+}
+
+.checkbox-link {
+  color: var(--accent-color);
 }
